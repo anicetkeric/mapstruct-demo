@@ -1,4 +1,5 @@
 package com.example.mapstructdemo.mapper;
+
 import com.example.mapstructdemo.domain.MappingFieldsModel;
 import com.example.mapstructdemo.dto.MappingFieldsModelDto;
 import org.mapstruct.Mapper;

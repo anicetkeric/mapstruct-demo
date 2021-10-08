@@ -9,7 +9,7 @@ import org.mapstruct.Mapping;
 @Mapper
 public interface DataTypeConversionMapper {
 
-    @Mapping(target="startDate", source = "model.startDate",
+    @Mapping(target = "startDate", source = "model.startDate",
             dateFormat = "dd-MM-yyyy HH:mm:ss")
     DataTypeConversionDto toDto(DataTypeConversionModel model);
 

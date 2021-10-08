@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class DataTypeConversionDto {
     private int id;
     private String key;
-   private String startDate;
+    private String startDate;
 }

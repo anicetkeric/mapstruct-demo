@@ -6,7 +6,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(uses = { SimpleModelMapper.class })
+@Mapper(uses = {SimpleModelMapper.class})
 public interface ModelEmbeddedObjectMapper {
 
     @Mapping(source = "model.label", target = "name")

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 class MappingFieldsModelMapperTest {
 
@@ -17,7 +18,7 @@ class MappingFieldsModelMapperTest {
     @Test
     public void shouldToDto() {
 
-        MappingFieldsModel model = new MappingFieldsModel(1,"name11");
+        MappingFieldsModel model = new MappingFieldsModel(1, "name11");
 
 
         MappingFieldsModelDto dto = modelMapper.toDto(model);
@@ -29,10 +30,10 @@ class MappingFieldsModelMapperTest {
     @Test
     public void shouldToModel() {
 
-        MappingFieldsModelDto dto = new MappingFieldsModelDto(2,"name1");
+        MappingFieldsModelDto dto = new MappingFieldsModelDto(2, "name1");
 
 
-        MappingFieldsModel model  = modelMapper.toModel(dto);
+        MappingFieldsModel model = modelMapper.toModel(dto);
 
         assertEquals(dto.getModelId(), model.getId());
         assertEquals(dto.getModelName(), model.getName());

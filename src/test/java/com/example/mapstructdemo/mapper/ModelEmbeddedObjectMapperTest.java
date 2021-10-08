@@ -19,8 +19,8 @@ class ModelEmbeddedObjectMapperTest {
 
     @Test
     public void shouldToDto() {
-        SimpleModel simpleModel = new SimpleModel("name","description");
-        ModelEmbeddedObject model = new ModelEmbeddedObject(1,"label1",simpleModel);
+        SimpleModel simpleModel = new SimpleModel("name", "description");
+        ModelEmbeddedObject model = new ModelEmbeddedObject(1, "label1", simpleModel);
 
 
         ModelEmbeddedObjectDto dto = modelMapper.toDto(model);
@@ -33,11 +33,11 @@ class ModelEmbeddedObjectMapperTest {
 
     @Test
     public void shouldToModel() {
-        SimpleModelDto simpleModelDto = new SimpleModelDto("name","description");
-        ModelEmbeddedObjectDto dto = new ModelEmbeddedObjectDto(2,"label2", simpleModelDto);
+        SimpleModelDto simpleModelDto = new SimpleModelDto("name", "description");
+        ModelEmbeddedObjectDto dto = new ModelEmbeddedObjectDto(2, "label2", simpleModelDto);
 
 
-        ModelEmbeddedObject model  = modelMapper.toModel(dto);
+        ModelEmbeddedObject model = modelMapper.toModel(dto);
 
         assertEquals(dto.getId(), model.getId());
         assertEquals(dto.getName(), model.getLabel());

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 class MappingObjectReferenceMapperTest {
 
@@ -19,7 +20,7 @@ class MappingObjectReferenceMapperTest {
     @Test
     public void shouldToDto() {
         ObjectReferenceModel objectReferenceModel = ObjectReferenceModel.builder().label("label").build();
-        MappingObjectReferenceModel model = new MappingObjectReferenceModel(1,"name11", objectReferenceModel);
+        MappingObjectReferenceModel model = new MappingObjectReferenceModel(1, "name11", objectReferenceModel);
 
 
         MappingObjectReferenceDto dto = modelMapper.toDto(model);
@@ -32,10 +33,10 @@ class MappingObjectReferenceMapperTest {
     @Test
     public void shouldToModel() {
         ObjectReferenceModelDto objectReferenceModelDto = new ObjectReferenceModelDto("label");
-        MappingObjectReferenceDto dto = new MappingObjectReferenceDto(2,"name1", objectReferenceModelDto);
+        MappingObjectReferenceDto dto = new MappingObjectReferenceDto(2, "name1", objectReferenceModelDto);
 
 
-        MappingObjectReferenceModel model  = modelMapper.toModel(dto);
+        MappingObjectReferenceModel model = modelMapper.toModel(dto);
 
         assertEquals(dto.getName(), model.getName());
         assertEquals(dto.getId(), model.getId());
