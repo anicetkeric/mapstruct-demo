@@ -18,7 +18,7 @@ class SimpleModelMapperTest {
     @Test
     public void shouldMapSimpleModelToDto() {
 
-        SimpleModel model = new SimpleModel("name","description");
+        SimpleModel model = new SimpleModel("name", "description");
 
 
         SimpleModelDto dto = simpleModelMapper.sourceToDestination(model);
@@ -30,10 +30,10 @@ class SimpleModelMapperTest {
     @Test
     public void shouldMapSimpleModelToDomain() {
 
-        SimpleModelDto dto = new SimpleModelDto("name","description");
+        SimpleModelDto dto = new SimpleModelDto("name", "description");
 
 
-        SimpleModel model  = simpleModelMapper.destinationToSource(dto);
+        SimpleModel model = simpleModelMapper.destinationToSource(dto);
 
         assertEquals(dto.getDescription(), model.getDescription());
         assertEquals(dto.getName(), model.getName());

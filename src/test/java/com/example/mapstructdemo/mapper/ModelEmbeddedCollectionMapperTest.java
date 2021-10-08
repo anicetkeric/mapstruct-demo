@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 class ModelEmbeddedCollectionMapperTest {
 
@@ -20,8 +21,8 @@ class ModelEmbeddedCollectionMapperTest {
 
     @Test
     public void shouldToDto() {
-        SimpleModel simpleModel = new SimpleModel("name","description");
-        ModelEmbeddedCollection model = new ModelEmbeddedCollection(1,"label1", Collections.singletonList(simpleModel));
+        SimpleModel simpleModel = new SimpleModel("name", "description");
+        ModelEmbeddedCollection model = new ModelEmbeddedCollection(1, "label1", Collections.singletonList(simpleModel));
 
 
         ModelEmbeddedCollectionDto dto = modelMapper.toDto(model);
@@ -34,11 +35,11 @@ class ModelEmbeddedCollectionMapperTest {
 
     @Test
     public void shouldToModel() {
-        SimpleModelDto simpleModelDto = new SimpleModelDto("name","description");
-        ModelEmbeddedCollectionDto dto = new ModelEmbeddedCollectionDto(2,"label2", Collections.singletonList(simpleModelDto));
+        SimpleModelDto simpleModelDto = new SimpleModelDto("name", "description");
+        ModelEmbeddedCollectionDto dto = new ModelEmbeddedCollectionDto(2, "label2", Collections.singletonList(simpleModelDto));
 
 
-        ModelEmbeddedCollection model  = modelMapper.toModel(dto);
+        ModelEmbeddedCollection model = modelMapper.toModel(dto);
 
         assertEquals(dto.getId(), model.getId());
         assertEquals(dto.getName(), model.getLabel());

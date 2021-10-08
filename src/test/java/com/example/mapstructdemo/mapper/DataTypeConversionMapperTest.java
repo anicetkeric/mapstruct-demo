@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 class DataTypeConversionMapperTest {
 
@@ -21,7 +22,7 @@ class DataTypeConversionMapperTest {
     @Test
     public void shouldToDto() {
 
-        DataTypeConversionModel model = new DataTypeConversionModel(1,1, LocalDateTime.of(2021,10,30,10,25,1));
+        DataTypeConversionModel model = new DataTypeConversionModel(1, 1, LocalDateTime.of(2021, 10, 30, 10, 25, 1));
 
 
         DataTypeConversionDto dto = modelMapper.toDto(model);
@@ -34,13 +35,13 @@ class DataTypeConversionMapperTest {
     @Test
     public void shouldToModel() {
 
-        DataTypeConversionDto dto = new DataTypeConversionDto(2,"1", "31-10-2021 10:18:01");
+        DataTypeConversionDto dto = new DataTypeConversionDto(2, "1", "31-10-2021 10:18:01");
 
 
-        DataTypeConversionModel model  = modelMapper.toModel(dto);
+        DataTypeConversionModel model = modelMapper.toModel(dto);
 
         assertEquals(dto.getId(), model.getId());
-        assertEquals(Integer.parseInt(dto.getKey()),model.getKey());
-        assertEquals(dto.getStartDate(),model.getStartDate().format(DateTimeFormatter.ofPattern(DATE_FORMAT)));
+        assertEquals(Integer.parseInt(dto.getKey()), model.getKey());
+        assertEquals(dto.getStartDate(), model.getStartDate().format(DateTimeFormatter.ofPattern(DATE_FORMAT)));
     }
 }

@@ -7,5 +7,6 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface SimpleModelMapper {
     SimpleModelDto sourceToDestination(SimpleModel source);
+
     SimpleModel destinationToSource(SimpleModelDto destination);
 }

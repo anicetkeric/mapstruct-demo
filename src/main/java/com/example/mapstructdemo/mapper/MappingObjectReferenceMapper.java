@@ -11,7 +11,7 @@ import org.mapstruct.Mapping;
 @Mapper
 public interface MappingObjectReferenceMapper {
 
-    @Mapping(target="objectReferenceModelDto", source = "model.objectReferenceModel")
+    @Mapping(target = "objectReferenceModelDto", source = "model.objectReferenceModel")
     MappingObjectReferenceDto toDto(MappingObjectReferenceModel model);
 
     @InheritInverseConfiguration
